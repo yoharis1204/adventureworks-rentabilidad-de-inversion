@@ -19,13 +19,19 @@ Este proyecto analiza el desempeño financiero de Adventure Works utilizando SQL
 
 
 
+
+
+
 Este análisis fue desarrollado para responder las siguientes preguntas de negocio planteadas por el equipo directivo:
 
 **¿Cuánto estamos ganando por país?**
 
 **¿Qué tan rentable es cada mercado considerando los gastos de marketing?**
 
-##Extracción y limpieza de datos
+
+
+
+**Extracción y limpieza de datos**
 
 En esta etapa se construyó una tabla base unificando información de ventas, productos, categorías, territorios y campañas de marketing mediante consultas SQL y JOINs. El objetivo fue centralizar los datos necesarios para analizar ingresos, costos y rentabilidad por mercado.
 Durante el proceso se realizó limpieza y validación de datos, incluyendo tratamiento de valores nulos, selección de variables relevantes y estandarización de categorías. Además, se crearon columnas calculadas para medir indicadores financieros clave:
