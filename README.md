@@ -18,15 +18,11 @@ Este proyecto analiza el desempeño financiero de Adventure Works utilizando SQL
 •	campanas: gasto de marketing por territorio/campaña.
 
 
-
-
-
-
 Este análisis fue desarrollado para responder las siguientes preguntas de negocio planteadas por el equipo directivo:
 
-**¿Cuánto estamos ganando por país?**
+•  **¿Cuánto estamos ganando por país?**
 
-**¿Qué tan rentable es cada mercado considerando los gastos de marketing?**
+•  **¿Qué tan rentable es cada mercado considerando los gastos de marketing?**
 
 
 
