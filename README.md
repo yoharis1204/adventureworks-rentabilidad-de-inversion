@@ -79,7 +79,7 @@ LEFT JOIN territorios AS t
   ON v.clave_territorio = t.clave_territorio;
 ```
 
-##Cálculo de ingresos y costos por país
+**Cálculo de ingresos y costos por país**
 
 En esta etapa se utilizó la tabla ventas_clean como base para calcular el desempeño financiero por país y territorio. El objetivo fue agrupar la información para identificar qué mercados generan mayores ingresos y cuáles representan mayores costos para la empresa.
 Se calcularon los ingresos y costos totales mediante funciones de agregación en SQL, sumando los valores de cada territorio y ordenando los resultados de mayor a menor para facilitar la identificación de los mercados más importantes. Los valores fueron presentados como enteros para mejorar la legibilidad y el análisis de la información.
@@ -95,7 +95,7 @@ group by vc.pais, vc.clave_territorio
 order by ingresos desc
 ```
 
-##Integración de gastos de marketing
+**Integración de gastos de marketing**
 
 En esta etapa se incorporó la inversión en campañas de marketing al análisis financiero para obtener una visión más completa del desempeño de cada mercado. Para ello, se combinaron los ingresos y costos calculados previamente con la información de gasto en campañas por territorio mediante un LEFT JOIN.
 
@@ -117,7 +117,7 @@ GROUP BY
 ORDER BY ingresos DESC;
 ```
 
-##Cálculo de beneficio bruto, margen y ROI
+**Cálculo de beneficio bruto, margen y ROI**
 
 En esta etapa se calcularon indicadores financieros clave para evaluar la rentabilidad de cada mercado. A partir de los ingresos, costos y gastos de marketing, se obtuvo el beneficio bruto, el margen de ganancia y el ROI, permitiendo identificar qué territorios generan mayores ganancias y qué tan eficiente es la inversión en campañas.
 
@@ -143,31 +143,31 @@ ORDER BY
     p.clave_territorio, ingresos, costos;
 ```
 
-##Resultados financieros por país
+**Resultados financieros por país**
 
 La siguiente tabla resume el desempeño financiero de cada mercado, incluyendo ingresos, costos, gasto en campañas de marketing, beneficio bruto, margen de ganancia y ROI. Estos indicadores permiten comparar la rentabilidad y eficiencia de cada territorio, facilitando la identificación de los mercados con mejor desempeño y mayores oportunidades de optimización.
 
 <img width="797" height="145" alt="image" src="https://github.com/user-attachments/assets/208208dc-fc35-4b0c-8a71-c6ec8ce314de" />
 
-##Principales hallazgos financieros
+**Principales hallazgos financieros**
 
-El análisis mostró que Estados Unidos es el mercado con mayores ingresos y beneficio bruto, además de presentar el ROI más alto (75.75%), lo que indica una inversión de marketing más eficiente en comparación con otros territorios.
+1. El análisis mostró que Estados Unidos es el mercado con mayores ingresos y beneficio bruto, además de presentar el ROI más alto (75.75%), lo que indica una inversión de marketing más eficiente en comparación con otros territorios.
 
-Australia ocupó el segundo lugar en ingresos y ganancias, manteniendo un margen sólido del 41.75% y un ROI del 49.16%. Por otro lado, países como Reino Unido, Alemania y Francia mostraron márgenes similares, pero un ROI considerablemente menor debido a mayores gastos en campañas de marketing.
+2. Australia ocupó el segundo lugar en ingresos y ganancias, manteniendo un margen sólido del 41.75% y un ROI del 49.16%. Por otro lado, países como Reino Unido, Alemania y Francia mostraron márgenes similares, pero un ROI considerablemente menor debido a mayores gastos en campañas de marketing.
 
-En general, los resultados evidencian que algunos mercados generan altos ingresos, pero no siempre convierten esa inversión en rentabilidad eficiente, lo que sugiere oportunidades para optimizar el presupuesto de marketing y priorizar los territorios con mejor retorno.
+3. En general, los resultados evidencian que algunos mercados generan altos ingresos, pero no siempre convierten esa inversión en rentabilidad eficiente, lo que sugiere oportunidades para optimizar el presupuesto de marketing y priorizar los territorios con mejor retorno.
 
-##Hipótesis
+**Hipótesis**
 
-Los países con mayores ingresos presentan también mayores niveles de rentabilidad y ROI.
-Un mayor gasto en campañas de marketing no garantiza necesariamente un mejor retorno de inversión.
-Los mercados con márgenes más altos tienden a ser más eficientes en la gestión de costos operativos.
-Existen diferencias significativas en el desempeño financiero entre territorios, lo que puede influir en la asignación estratégica del presupuesto de marketing.
+1. Los países con mayores ingresos presentan también mayores niveles de rentabilidad y ROI.
+2. Un mayor gasto en campañas de marketing no garantiza necesariamente un mejor retorno de inversión.
+3. Los mercados con márgenes más altos tienden a ser más eficientes en la gestión de costos operativos.
+4. Existen diferencias significativas en el desempeño financiero entre territorios, lo que puede influir en la asignación estratégica del presupuesto de marketing.
 
-##Conclusiones
+**Conclusiones**
 
-Estados Unidos se posicionó como el mercado más rentable, registrando los mayores ingresos, beneficio bruto y ROI, lo que refleja una estrategia de inversión en marketing más eficiente.
-Australia mostró un desempeño sólido tanto en ingresos como en margen de ganancia, consolidándose como uno de los mercados más importantes para la compañía.
-Reino Unido, Alemania y Francia presentaron márgenes similares, pero un ROI menor debido a niveles elevados de inversión en campañas de marketing.
-Los resultados demuestran que altos ingresos no siempre significan mayor rentabilidad, ya que el costo de marketing impacta directamente el retorno obtenido en cada territorio.
-El análisis permitió identificar oportunidades para optimizar la inversión en campañas y priorizar mercados con mejor rendimiento financiero.
+1. Estados Unidos se posicionó como el mercado más rentable, registrando los mayores ingresos, beneficio bruto y ROI, lo que refleja una estrategia de inversión en marketing más eficiente.
+2. Australia mostró un desempeño sólido tanto en ingresos como en margen de ganancia, consolidándose como uno de los mercados más importantes para la compañía.
+3. Reino Unido, Alemania y Francia presentaron márgenes similares, pero un ROI menor debido a niveles elevados de inversión en campañas de marketing.
+4. Los resultados demuestran que altos ingresos no siempre significan mayor rentabilidad, ya que el costo de marketing impacta directamente el retorno obtenido en cada territorio.
+5. El análisis permitió identificar oportunidades para optimizar la inversión en campañas y priorizar mercados con mejor rendimiento financiero.
