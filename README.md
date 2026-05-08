@@ -3,7 +3,7 @@
 Este proyecto analiza el desempeño financiero de Adventure Works utilizando SQL y Google Sheets, con el objetivo de identificar los mercados más rentables y optimizar la inversión en marketing. Se trabajó con datos de ventas, productos, clientes, territorios y campañas para calcular indicadores clave como ingresos, costos, beneficio bruto, margen y ROI.
 
 
-###Para el análisis se utilizaron los siguientes tablas: 
+**Para el análisis se utilizaron los siguientes tablas:**
 
 •	ventas_2017: transacciones de líneas de pedido (2017). Grano: una línea por producto y pedido.
 •	productos: catálogo con atributos, costo y precio unitario por ClaveProducto.
