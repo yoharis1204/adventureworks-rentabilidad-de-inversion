@@ -3,7 +3,8 @@
 Este proyecto analiza el desempeño financiero de Adventure Works utilizando SQL y Google Sheets, con el objetivo de identificar los mercados más rentables y optimizar la inversión en marketing. Se trabajó con datos de ventas, productos, clientes, territorios y campañas para calcular indicadores clave como ingresos, costos, beneficio bruto, margen y ROI.
 
 
-Para el análisis se utilizaron los siguientes tablas: 
+###Para el análisis se utilizaron los siguientes tablas: 
+
 •	ventas_2017: transacciones de líneas de pedido (2017). Grano: una línea por producto y pedido.
 •	productos: catálogo con atributos, costo y precio unitario por ClaveProducto.
 •	productos_categorias: jerarquía categoría/subcategoría para enriquecer productos.
@@ -11,11 +12,11 @@ Para el análisis se utilizaron los siguientes tablas:
 •	territorios: mapa de ClaveTerritorio → país y continente.
 •	campanas: gasto de marketing por territorio/campaña.
 
-Este análisis fue desarrollado para responder las siguientes preguntas de negocio planteadas por el equipo directivo:
+###Este análisis fue desarrollado para responder las siguientes preguntas de negocio planteadas por el equipo directivo:
 ¿Cuánto estamos ganando por país?
 ¿Qué tan rentable es cada mercado considerando los gastos de marketing?
 
-Extracción y limpieza de datos
+##Extracción y limpieza de datos
 
 En esta etapa se construyó una tabla base unificando información de ventas, productos, categorías, territorios y campañas de marketing mediante consultas SQL y JOINs. El objetivo fue centralizar los datos necesarios para analizar ingresos, costos y rentabilidad por mercado.
 Durante el proceso se realizó limpieza y validación de datos, incluyendo tratamiento de valores nulos, selección de variables relevantes y estandarización de categorías. Además, se crearon columnas calculadas para medir indicadores financieros clave:
@@ -67,7 +68,7 @@ LEFT JOIN territorios AS t
   ON v.clave_territorio = t.clave_territorio;
 ```
 
-Cálculo de ingresos y costos por país
+##Cálculo de ingresos y costos por país
 
 En esta etapa se utilizó la tabla ventas_clean como base para calcular el desempeño financiero por país y territorio. El objetivo fue agrupar la información para identificar qué mercados generan mayores ingresos y cuáles representan mayores costos para la empresa.
 Se calcularon los ingresos y costos totales mediante funciones de agregación en SQL, sumando los valores de cada territorio y ordenando los resultados de mayor a menor para facilitar la identificación de los mercados más importantes. Los valores fueron presentados como enteros para mejorar la legibilidad y el análisis de la información.
@@ -83,7 +84,7 @@ group by vc.pais, vc.clave_territorio
 order by ingresos desc
 ```
 
-Integración de gastos de marketing
+##Integración de gastos de marketing
 
 En esta etapa se incorporó la inversión en campañas de marketing al análisis financiero para obtener una visión más completa del desempeño de cada mercado. Para ello, se combinaron los ingresos y costos calculados previamente con la información de gasto en campañas por territorio mediante un LEFT JOIN.
 
@@ -105,7 +106,7 @@ GROUP BY
 ORDER BY ingresos DESC;
 ```
 
-Cálculo de beneficio bruto, margen y ROI
+##Cálculo de beneficio bruto, margen y ROI
 
 En esta etapa se calcularon indicadores financieros clave para evaluar la rentabilidad de cada mercado. A partir de los ingresos, costos y gastos de marketing, se obtuvo el beneficio bruto, el margen de ganancia y el ROI, permitiendo identificar qué territorios generan mayores ganancias y qué tan eficiente es la inversión en campañas.
 
@@ -131,13 +132,13 @@ ORDER BY
     p.clave_territorio, ingresos, costos;
 ```
 
-Resultados financieros por país
+##Resultados financieros por país
 
 La siguiente tabla resume el desempeño financiero de cada mercado, incluyendo ingresos, costos, gasto en campañas de marketing, beneficio bruto, margen de ganancia y ROI. Estos indicadores permiten comparar la rentabilidad y eficiencia de cada territorio, facilitando la identificación de los mercados con mejor desempeño y mayores oportunidades de optimización.
 
 <img width="797" height="145" alt="image" src="https://github.com/user-attachments/assets/208208dc-fc35-4b0c-8a71-c6ec8ce314de" />
 
-Principales hallazgos financieros
+##Principales hallazgos financieros
 
 El análisis mostró que Estados Unidos es el mercado con mayores ingresos y beneficio bruto, además de presentar el ROI más alto (75.75%), lo que indica una inversión de marketing más eficiente en comparación con otros territorios.
 
@@ -145,13 +146,15 @@ Australia ocupó el segundo lugar en ingresos y ganancias, manteniendo un margen
 
 En general, los resultados evidencian que algunos mercados generan altos ingresos, pero no siempre convierten esa inversión en rentabilidad eficiente, lo que sugiere oportunidades para optimizar el presupuesto de marketing y priorizar los territorios con mejor retorno.
 
-Hipótesis
+##Hipótesis
+
 Los países con mayores ingresos presentan también mayores niveles de rentabilidad y ROI.
 Un mayor gasto en campañas de marketing no garantiza necesariamente un mejor retorno de inversión.
 Los mercados con márgenes más altos tienden a ser más eficientes en la gestión de costos operativos.
 Existen diferencias significativas en el desempeño financiero entre territorios, lo que puede influir en la asignación estratégica del presupuesto de marketing.
 
-Conclusiones
+##Conclusiones
+
 Estados Unidos se posicionó como el mercado más rentable, registrando los mayores ingresos, beneficio bruto y ROI, lo que refleja una estrategia de inversión en marketing más eficiente.
 Australia mostró un desempeño sólido tanto en ingresos como en margen de ganancia, consolidándose como uno de los mercados más importantes para la compañía.
 Reino Unido, Alemania y Francia presentaron márgenes similares, pero un ROI menor debido a niveles elevados de inversión en campañas de marketing.
