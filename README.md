@@ -6,15 +6,24 @@ Este proyecto analiza el desempeño financiero de Adventure Works utilizando SQL
 **Para el análisis se utilizaron los siguientes tablas:**
 
 •	ventas_2017: transacciones de líneas de pedido (2017). Grano: una línea por producto y pedido.
+
 •	productos: catálogo con atributos, costo y precio unitario por ClaveProducto.
+
 •	productos_categorias: jerarquía categoría/subcategoría para enriquecer productos.
+
 •	clientes: maestro de clientes con segmento y ubicación.
+
 •	territorios: mapa de ClaveTerritorio → país y continente.
+
 •	campanas: gasto de marketing por territorio/campaña.
 
-###Este análisis fue desarrollado para responder las siguientes preguntas de negocio planteadas por el equipo directivo:
-¿Cuánto estamos ganando por país?
-¿Qué tan rentable es cada mercado considerando los gastos de marketing?
+
+
+Este análisis fue desarrollado para responder las siguientes preguntas de negocio planteadas por el equipo directivo:
+
+**¿Cuánto estamos ganando por país?**
+
+**¿Qué tan rentable es cada mercado considerando los gastos de marketing?**
 
 ##Extracción y limpieza de datos
 
